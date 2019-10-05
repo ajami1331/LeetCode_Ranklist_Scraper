@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/CLown1331/LeetCode_Ranklist_Scraper/issues"
   },
-  "homepage": "https://github.com/CLown1331/LeetCode_Ranklist_Scraper#readme"
+  "homepage": "https://github.com/CLown1331/LeetCode_Ranklist_Scraper#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }
