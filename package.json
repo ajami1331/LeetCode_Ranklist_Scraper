@@ -1,0 +1,24 @@
+{
+  "name": "leetcode_ranklist_scraper",
+  "version": "1.0.0",
+  "description": "leetcode ranklist scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CLown1331/LeetCode_Ranklist_Scraper.git"
+  },
+  "keywords": [
+    "leetcode",
+    "ranklist",
+    "scraper"
+  ],
+  "author": "Araf Al-Jami (CLown1331)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CLown1331/LeetCode_Ranklist_Scraper/issues"
+  },
+  "homepage": "https://github.com/CLown1331/LeetCode_Ranklist_Scraper#readme"
+}
