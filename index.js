@@ -1,26 +1,45 @@
 const fetch = require('node-fetch');
 
-let page = 1;
+const url = ' https://leetcode.com/contest/api/ranking/';
 
-async function* pages(url, totalPage) {
-    for (let page = 1; page <= totalPage; page++) {
+async function* pages(contestSlug) {
+    for (let page = 1; ; page++) {
         
-        const pageUrl = url + page;
+        const pageUrl = url + contestSlug + `/?pagination=${page}&region=global`;
 
-        const response = await fetch(pageUrl);
+        console.log(pageUrl);
+
+        const response = await fetch(pageUrl, { 
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
         
-        const data = await response.text();
+        const data = await response.json();
 
-        yield data;
+        if (data.total_rank.length == 0) {
+            break;
+        }
+
+        yield data.total_rank;
     }
 }
 
-(async function(url, totalPage) {
+(async function(contestSlug) {
     try {
-        for await (const page of pages(url, totalPage)) {
-            console.log(page);
+        let userByCounry = {};
+        for await (const page of pages(contestSlug)) {
+            console.log(page.length);
+            for (const user of page) {
+                if (!userByCounry[user['country_name']]) {
+                    userByCounry[user['country_name']] = [];
+                }
+                userByCounry[user['country_name']].push(user);
+            }
         }
+        console.log(userByCounry['Bangladesh']);
     } catch (error) {
         console.log(error);
     }
-})('https://leetcode.com/contest/biweekly-contest-10/ranking/', 2);
+})('biweekly-contest-10');
