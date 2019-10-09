@@ -42,4 +42,4 @@ async function* pages(contestSlug) {
     } catch (error) {
         console.log(error);
     }
-})('biweekly-contest-10');
+})('biweekly-contest-6');
