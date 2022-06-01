@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/CLown1331/LeetCode_Ranklist_Scraper#readme",
   "dependencies": {
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.2.5"
   }
 }
